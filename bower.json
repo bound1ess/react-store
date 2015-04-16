@@ -1,0 +1,8 @@
+{
+    "name": "react-store",
+
+    "dependencies": {
+        "react": "latest",
+        "bootstrap": "latest"
+    }
+}

@@ -1,11 +1,12 @@
 {
     "devDependencies": {
-        "gulp": "latest",
-        "gulp-util": "latest",
-        "gulp-coffee": "latest",
-        "gulp-uglify": "latest",
-        "gulp-concat": "latest",
-        "bower": "latest",
+        "gulp":          "latest",
+        "gulp-util":     "latest",
+        "gulp-coffee":   "latest",
+        "gulp-uglify":   "latest",
+        "gulp-concat":   "latest",
+        "gulp-react":    "latest",
+        "bower":         "latest",
         "coffee-script": "latest"
     }
 }
