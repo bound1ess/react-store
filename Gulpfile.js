@@ -16,4 +16,9 @@ gulp.task('compile-scripts', function() {
 
 gulp.task('minify-scripts', function() {
     util.log('Minifying compiled files...');
+
+    gulp.src('dist/*.js')
+        .pipe(uglify({mangle: false, compress: false}))
+        .pipe(concat('all.min.js'))
+        .pipe(gulp.dest('dist/'));
 });
