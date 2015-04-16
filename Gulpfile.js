@@ -9,6 +9,8 @@ var gulp   = require('gulp'),
 gulp.task('default', ['clean-up', 'compile-scripts', 'minify-scripts']);
 
 gulp.task('clean-up', function() {
+    util.log('Cleaning up...');
+
     // Clean up before producing a new build.
     del([
         'build/*.js',
@@ -46,4 +48,8 @@ gulp.task('copy-minified-components', function() {
 
     gulp.src('bower_components/bootstrap/dist/css/bootstrap.min.css')
         .pipe(gulp.dest('public/'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch(['src/*.coffee'], ['default']);
 });
