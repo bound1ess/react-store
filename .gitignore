@@ -1,4 +1,5 @@
 /node_modules/
 /bower_components/
 /dist/*.js
+/dist/*.css
 /npm-debug.log

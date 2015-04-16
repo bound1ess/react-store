@@ -1,6 +1,6 @@
-message = 'Hello, world!'
+`/** @jsx React.DOM */`
 
-console.log message
+FilterableBookCollection = React.createClass
+    render: -> `<h1>Hello, world!</h1>`
 
-# cheat
-# vim: syntax=ruby
+React.render(`<FilterableBookCollection/>`, document.body)
