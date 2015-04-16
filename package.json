@@ -6,6 +6,7 @@
         "gulp-uglify":   "latest",
         "gulp-concat":   "latest",
         "gulp-react":    "latest",
+        "del":           "latest",
         "bower":         "latest",
         "coffee-script": "latest"
     }
