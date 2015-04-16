@@ -1,0 +1,7 @@
+{
+    "devDependencies": {
+        "gulp": "latest",
+        "bower": "latest",
+        "coffee-script": "latest"
+    }
+}
