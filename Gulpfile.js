@@ -13,22 +13,25 @@ gulp.task('compile-scripts', function() {
     gulp.src('src/*.coffee')
         .pipe(coffee({bare: true}).on('error', util.log))
         .pipe(react())
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('minify-scripts', function() {
     util.log('Minifying compiled files...');
 
-    gulp.src('dist/*.js')
+    gulp.src('build/*.js')
         .pipe(uglify({mangle: false, compress: false}))
         .pipe(concat('all.min.js'))
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('build/'));
+
+    gulp.src('build/all.min.js')
+        .pipe(gulp.dest('public/'));
 });
 
 gulp.task('copy-minified-components', function() {
     gulp.src('bower_components/react/react.min.js')
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('public/'));
 
     gulp.src('bower_components/bootstrap/dist/css/bootstrap.min.css')
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('public/'));
 });
