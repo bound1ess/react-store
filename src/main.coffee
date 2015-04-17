@@ -1,4 +1,4 @@
-`/** @jsx React.DOM */`
+selector = document.getElementById("book-category-list")
+categoryList = []
 
-FilterableBookCollection = React.createClass
-    render: -> `<h1>Hello, world!</h1>`
+React.render(`<BookCategoryList list={categoryList}/>`, selector)
