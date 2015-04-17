@@ -32,12 +32,13 @@ gulp.task('minify-scripts', ['compile-scripts'], function() {
 gulp.task('compile-scripts', ['clean-up'], function() {
     util.log('Compiling Coffee files...');
 
-    gulp.src('src/components/*.coffee')
+    var stream = gulp.src('src/components/*.coffee')
         .pipe(coffee({bare: true}).on('error', util.log))
         .pipe(react()) // Compile JSX.
         .pipe(gulp.dest('build/components/'));
 
-    var stream = gulp.src('src/*.coffee')
+    // It's a trap!
+    gulp.src('src/*.coffee')
         .pipe(coffee({bare: true}).on('error', util.log))
         .pipe(react())
         .pipe(gulp.dest('build/'));
@@ -46,7 +47,7 @@ gulp.task('compile-scripts', ['clean-up'], function() {
 });
 
 gulp.task('clean-up', function(callback) {
-    util.log('Cleaning up...');
+    util.log('Cleaning up the previous build...');
 
     // Clean up before producing a new build.
     del(['build/**/*.js', 'public/all.min.js'], callback);
