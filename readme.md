@@ -6,6 +6,6 @@ The components hierarchy:
     - BookCategory (just name)
 - FilterableBookCollection (searchable and sortable)
     - SearchBar (for book name)
-    - SortBar (ASC/DESC by price, release date, popularity)
+    - SortBar (ASC/DESC by price)
     - BookCollection (owns Book items)
         - Book (name, genre (or category), price, views count, brief desc.)

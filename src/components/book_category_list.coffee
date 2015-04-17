@@ -1,8 +1,8 @@
 BookCategoryList = React.createClass
     render: -> `(
-        <ul class="list-unstyled">
+        <ul className="list-unstyled">
             {this.props.list.map(function(category, id) {
-                <BookCategory key={id} name={category}/>
+                return <BookCategory key={id} name={category}/>
             })}
         </ul>
     )`

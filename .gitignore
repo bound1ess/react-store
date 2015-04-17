@@ -1,6 +1,6 @@
 /node_modules/
 /bower_components/
-/build/*.js
+/build/**/*.js
 /public/*.js
 /public/*.css
 /npm-debug.log
