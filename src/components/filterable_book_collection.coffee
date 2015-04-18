@@ -8,8 +8,18 @@ FilterableBookCollection = React.createClass
         this.setState({ books })
 
     handleSortPatternUpdate: (pattern) ->
-        # do something with the pattern
-        this.setState({ books: this.state.books })
+        comparator = (book1, book2) ->
+            if book1.price < book2.price
+                return 1 if pattern is true
+                return -1
+
+            if book1.price > book2.price
+                return -1 if pattern is true
+                return 1
+
+            0
+
+        this.setState({ books: this.props.books.sort(comparator) })
 
     render: -> `(
         <div>
