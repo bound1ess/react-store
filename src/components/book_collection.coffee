@@ -7,6 +7,7 @@ BookCollection = React.createClass
                         <tr>
                             <th>Name</th>
                             <th>Price</th>
+                            <th>Category</th>
                         </tr>
                     </thead>
 

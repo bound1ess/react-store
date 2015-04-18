@@ -24,13 +24,25 @@ FilterableBookCollection = React.createClass
             books: this.state.books.sort(comparator)
         })
 
+    handleCategoryListUpdate: (selectedCategories) ->
+        # ...
+
     render: -> `(
-        <div>
-            <form>
-                <SearchBar parentCallback={this.handleQueryUpdate}/>
-                <SortBar parentCallback={this.handleSortPatternUpdate}/>
-            </form>
-            <hr/>
-            <BookCollection books={this.state.books}/>
+        <div className="container">
+            <div className="col-md-3">
+                <BookCategoryList
+                    list={this.props.categories}
+                    parentCallback={this.handleCategoryListUpdate}
+                />
+            </div>
+
+            <div className="col-md-9">
+                <form>
+                    <SearchBar parentCallback={this.handleQueryUpdate}/>
+                    <SortBar parentCallback={this.handleSortPatternUpdate}/>
+                </form>
+                <hr/>
+                <BookCollection books={this.state.books}/>
+            </div>
         </div>
     )`

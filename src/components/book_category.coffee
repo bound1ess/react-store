@@ -1,4 +1,16 @@
 BookCategory = React.createClass
-    handleClick: -> alert(this.props.name)
+    getInitialState: ->
+        selected: true
 
-    render: -> `<li><a onClick={this.handleClick} href="#">{this.props.name}</a></li>`
+    handleClick: (event) ->
+        event.preventDefault()
+        this.setState({ selected: !this.state.selected })
+
+    render: -> `(
+        <li>
+            <a href="#" onClick={this.handleClick}>
+                {this.props.name}
+                {this.state.selected ? " +" : ""}
+            </a>
+        </li>
+    )`
