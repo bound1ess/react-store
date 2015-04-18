@@ -3,8 +3,9 @@ FilterableBookCollection = React.createClass
         books: this.props.books
 
     handleQueryUpdate: (query) ->
-        # do something with the query string
-        this.setState({ books: this.state.books })
+        query = query.toLowerCase()
+        books = this.props.books.filter((book) -> book.name.toLowerCase().indexOf(query) > -1)
+        this.setState({ books })
 
     handleSortPatternUpdate: (pattern) ->
         # do something with the pattern
