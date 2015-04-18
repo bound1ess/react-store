@@ -2,9 +2,10 @@ BookCategory = React.createClass
     getInitialState: ->
         selected: true
 
-    handleClick: (event) ->
-        event.preventDefault()
-        this.setState({ selected: !this.state.selected })
+    handleClick: ->
+        selected = !this.state.selected
+        this.setState({ selected })
+        this.props.parentCallback(selected, this.props.name.toLowerCase())
 
     render: -> `(
         <li>
