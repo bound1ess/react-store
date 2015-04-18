@@ -10,6 +10,8 @@ BookCategoryList = React.createClass
     handleChildUpdate: (state, element) ->
         elements = this.state.elements
         elements[element] = state
+
+        this.props.parentCallback(elements)
         this.setState({ elements })
 
     render: ->

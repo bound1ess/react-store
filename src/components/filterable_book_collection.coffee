@@ -24,8 +24,12 @@ FilterableBookCollection = React.createClass
             books: this.state.books.sort(comparator)
         })
 
-    handleCategoryListUpdate: (selectedCategories) ->
-        # ...
+    handleCategoryListUpdate: (selected) ->
+        this.setState({
+            books: this.props.books.filter((book) ->
+                selected[book.category] is true
+            )
+        })
 
     render: -> `(
         <div className="container">
