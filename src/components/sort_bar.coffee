@@ -6,6 +6,7 @@ SortBar = React.createClass
         asc =! this.state.asc
 
         this.setState({ asc })
+        this.props.parentCallback(asc)
 
     render: -> `(
         <div className="checkbox">

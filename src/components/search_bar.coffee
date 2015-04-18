@@ -6,6 +6,9 @@ SearchBar = React.createClass
         query = event.target.value
         this.setState({ query })
 
+        # Let the parent component know.
+        this.props.parentCallback(query)
+
     render: -> `(
         <div className="form-group">
             <input

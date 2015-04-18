@@ -1,2 +1,4 @@
 BookCategory = React.createClass
-    render: -> `<li><a href="#">{this.props.name}</a></li>`
+    handleClick: -> alert(this.props.name)
+
+    render: -> `<li><a onClick={this.handleClick} href="#">{this.props.name}</a></li>`
