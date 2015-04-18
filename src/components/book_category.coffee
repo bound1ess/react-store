@@ -1,2 +1,2 @@
 BookCategory = React.createClass
-    render: -> `<li>{this.props.name}</li>`
+    render: -> `<li><a href="#">{this.props.name}</a></li>`

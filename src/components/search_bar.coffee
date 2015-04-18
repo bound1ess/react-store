@@ -2,8 +2,17 @@ SearchBar = React.createClass
     getInitialState: ->
         query: ""
 
-    onChange: ->
-        query = this.state.query
+    onChange: (event) ->
+        query = event.target.value
         this.setState({ query })
 
-    render: -> `<input value={this.state.query} onChange={this.onChange}/>`
+    render: -> `(
+        <div className="form-group">
+            <input
+                placeholder="Your search query..."
+                className="form-control"
+                value={this.state.query}
+                onChange={this.onChange}
+            />
+        </div>
+    )`

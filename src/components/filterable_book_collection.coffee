@@ -1,8 +1,11 @@
 FilterableBookCollection = React.createClass
     render: -> `(
         <div>
-            <SearchBar/>
-            <SortBar/>
+            <form>
+                <SearchBar/>
+                <SortBar/>
+            </form>
+            <hr/>
             <BookCollection books={this.props.books}/>
         </div>
     )`
