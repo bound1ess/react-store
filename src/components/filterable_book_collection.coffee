@@ -3,5 +3,6 @@ FilterableBookCollection = React.createClass
         <div>
             <SearchBar/>
             <SortBar/>
+            <BookCollection books={this.props.books}/>
         </div>
     )`

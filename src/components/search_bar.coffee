@@ -4,6 +4,6 @@ SearchBar = React.createClass
 
     onChange: ->
         query = this.state.query
-        setState({ query })
+        this.setState({ query })
 
     render: -> `<input value={this.state.query} onChange={this.onChange}/>`

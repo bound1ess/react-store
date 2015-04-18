@@ -1,23 +1,17 @@
 SortBar = React.createClass
     getInitialState: ->
-        conditions:
-            price: "asc"
+        asc: true
 
-    swapCondition: (id) ->
-        conditions = this.state.conditions
+    swapCondition: ->
+        asc =! this.state.asc
 
-        if conditions[id] is "asc"
-            conditions[id] = "desc"
-        else
-            conditions[id] = "asc"
-
-        setState({ conditions })
+        this.setState({ asc })
 
     render: -> `(
         <div>
             <i>Sorting by price:</i>
-            <a href="#" onClick={this.swapCondition("price")}>
-                {price == "asc" ? "The cheapest first" : "The most expensive first"}
+            <a href="#" onClick={this.swapCondition}>
+                {this.state.asc ? "The cheapest first" : "The most expensive first"}
             </a>
         </div>
     )`
