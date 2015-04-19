@@ -18,10 +18,8 @@ gulp.task('minify-scripts', ['compile-scripts'], function() {
     util.log('Minifying compiled files using UglifyJS...');
 
     var stream = gulp.src(['build/*/*.js', 'build/*.js'])
-        // Uncomment later.
-        //.pipe(uglify({mangle: false, compress: false})) // Allow mangling names later.
-        // Not necessary.
-        .pipe(logger())
+        .pipe(uglify({mangle: false, compress: false}))
+        .pipe(logger()) // Not necessary.
         .pipe(concat('all.min.js'))
         .pipe(gulp.dest('build/'))
         .pipe(gulp.dest('public/'));

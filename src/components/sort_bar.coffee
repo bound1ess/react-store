@@ -1,6 +1,6 @@
 SortBar = React.createClass
     getInitialState: ->
-        asc: true
+        asc: false
 
     swapCondition: ->
         asc =! this.state.asc
@@ -16,7 +16,7 @@ SortBar = React.createClass
                     onChange={this.swapCondition}
                     value={this.state.asc}
                 />
-                 Show the cheapest books first
+                 Show the most expensive books first
             </label>
         </div>
     )`
