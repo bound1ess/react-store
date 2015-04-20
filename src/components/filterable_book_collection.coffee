@@ -1,15 +1,19 @@
 FilterableBookCollection = React.createClass
     getInitialState: ->
         books: this.props.books
+        selected_books: this.props.books
         last_query: ""
         last_pattern: false
 
     handleQueryUpdate: (query) ->
         query = query.toLowerCase()
-        books = this.state.books.filter((book) -> book.name.toLowerCase().indexOf(query) > -1)
+
+        books = this.state.books.filter((book) ->
+            book.name.toLowerCase().indexOf(query) > -1
+        )
 
         this.setState(
-            { books, last_query: query },
+            { selected_books: books, last_query: query },
             (-> this.handleSortPatternUpdate(this.state.last_pattern)).bind(this)
         )
 
@@ -26,7 +30,7 @@ FilterableBookCollection = React.createClass
             0
 
         this.setState({
-            books: this.state.books.sort(comparator),
+            selected_books: this.state.selected_books.sort(comparator),
             last_pattern: pattern
         })
 
@@ -54,7 +58,7 @@ FilterableBookCollection = React.createClass
                     <SortBar parentCallback={this.handleSortPatternUpdate}/>
                 </form>
                 <hr/>
-                <BookCollection books={this.state.books}/>
+                <BookCollection books={this.state.selected_books}/>
             </div>
         </div>
     )`
